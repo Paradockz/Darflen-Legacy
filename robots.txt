@@ -1,0 +1,25 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /settings/
+Disallow: /notifications/
+Disallow: /email/
+Disallow: /email/change/
+Disallow: /email/verify/
+Disallow: /username/
+Disallow: /username/change/
+Disallow: /password/
+Disallow: /password/change/
+Disallow: /password/reset/
+Disallow: /vendor/
+Disallow: /includes/
+Disallow: /static/css/
+Disallow: /static/html/
+Disallow: /static/img/
+Disallow: /cgi-bin/
+Disallow: /internal/
+Disallow: /experiments/
+Disallow: /includes/
+
+Crawl-delay: 5
+Sitemap: https://static.darflen.com/sitemap.xml

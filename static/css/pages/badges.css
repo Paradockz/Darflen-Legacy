@@ -1,0 +1,73 @@
+h1, h2 {
+    margin: 1rem 0;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+.badge-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 7rem;
+    padding: 1rem;
+    background-color: var(--profile-box-color);
+    box-shadow: var(--box-shadow-sm);
+    border-radius: 5px;
+    scroll-margin-top: 4.15rem;
+}
+
+.badge-item:target {
+    background-color: var(--profile-post-biscuit);
+}
+
+.badge-item:not(:nth-child(1)) {
+    margin-top: 1rem;
+}
+
+.badge-item-section {
+    display: flex;
+    align-items: center;
+}
+
+.badge-item-image {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1rem;
+}
+
+.badge-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.badge-item-title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.badge-item-description {
+    line-height: 1.33;
+}
+
+.badge-item-awarded {
+    font-size: 0.9rem;
+    line-height: 1.33;
+    width: 30%;
+    margin-left: 1rem;
+    text-align: right;
+}
+
+@media screen and (min-width: 1024px) {
+    .badge-item-image {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .badge-item-info {
+        width: 85%;
+    }
+}

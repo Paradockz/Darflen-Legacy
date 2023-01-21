@@ -1,0 +1,7 @@
+#content {
+    min-height: calc(100vh - 50px);
+}
+
+#bans {
+    margin-top: 1rem;
+}

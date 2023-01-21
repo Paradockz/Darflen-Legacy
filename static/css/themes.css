@@ -1,0 +1,152 @@
+html, 
+html[theme=light] {
+    --form-background: var(--light-100);
+    --form-small-text: var(--light-700);
+    --modal-background: #09090ca0;
+
+    --input-border-color: var(--light-400);
+    --input-border-color-selected: var(--light-500);
+    --input-input-color: var(--light-200);
+    --input-input-color-selected: var(--light-400);
+    --input-transition: var(--default-transition);
+    --input-option-color: var(--light-100);
+    --input-option-color-selected: var(--light-300);
+
+    --profile-text-color-reverse: var(--light-200);
+    --profile-text-color-half-reverse: var(--dark-200);
+    --profile-text-color: var(--default-text-color);
+    --profile-text-color-selected-reverse: #d6d6d6;
+    --profile-image-background: var(--dark-700);
+    --profile-post-biscuit: var(--light-350);
+    --profile-post-biscuit-selected: #d6d6d6;
+    --profile-banner-background-gradient: linear-gradient(0deg, rgba(27, 25, 37, 0.6) 0%, rgba(17, 15, 27, 0.2) 20%, rgba(0, 0, 0, 0) 50%);
+    --profile-box-color: var(--light-200);
+    --profile-followed-button: var(--dark-200);
+    --profile-followed-button-selected: #3b374a;
+    --profile-badge-block: var(--light-350);
+    --profile-badge-block-selected: var(--light-500);
+
+    --player-controls-gradient: linear-gradient(0deg, rgba(27, 25, 37, 0.5) 0%, rgba(17, 15, 27, 0.2) 55%, rgba(0, 0, 0, 0) 105%);
+    --player-playback-color: #2A293488;
+    --player-background: #25242E;
+    --player-background-empty: #25242E;
+    --player-seek-color-played: linear-gradient(90deg, #e7133a, #f1284d);
+    --player-seek-color: rgba(128, 128, 128, 0.25);
+    --player-volume-color-played: linear-gradient(var(--light-300), var(--light-300));
+    --player-volume-color: rgba(128, 128, 128, 0.25);
+    --player-default-transition: 0.2s ease;
+    --player-default-transition-fast: 0.1s ease;
+    --player-outline-color: #2188f1;
+
+    --settings-banner-background-gradient: linear-gradient(0deg, rgba(27, 25, 37, 0.66) 0%, rgba(37, 35, 47, 0.5) 25%, rgba(17, 15, 27, 0.2) 100%);
+    --settings-user-content-background: var(--light-350);
+    --settings-logged-device-background: var(--light-500);
+
+    --navbar-text-color: #f6f6f6;
+    --navbar-color: var(--dark-700);
+    --navbar-color-darker: var(--dark-800);
+    --navbar-color-selected: var(--dark-800);
+    --navbar-shadow: 0 0 3px #09090C44;
+    --navbar-search-color: var(--light-300);
+    --navbar-search-color-selected: #d6d6d6;
+    --navbar-icon-color: var(--filter-invert);
+    --navbar-search-icon-color: var(--filter-barely-invert);
+    --navbar-transition: var(--default-transition);
+
+    --footer-text-color: var(--dark-200);
+    --footer-text-color-selected: var(--dark-700);
+    --footer-transition: var(--default-transition);
+
+    --content-background: var(--light-300);
+    --content-box-background: var(--light-100);
+
+    --internal-content-box-background: var(--light-200);
+    --internal-table-background-even: var(--light-200);
+    --internal-table-background-odd: var(--light-350);
+}
+
+html[theme=dark] {
+    --form-background: var(--dark-800);
+    --form-small-text: var(--light-300);
+
+    --content-background: var(--dark-900);
+    --content-box-background: var(--dark-800);
+
+    --settings-user-content-background: var(--dark-700);
+    --settings-logged-device-background: var(--dark-500);
+
+    --default-text-color: var(--light-300);
+
+    --profile-box-color: var(--dark-800);
+    --profile-text-color-half-reverse: var(--light-600);
+    --profile-text-color: var(--light-400);
+    --profile-post-biscuit: var(--dark-700);
+    --profile-post-biscuit-selected: var(--dark-600);
+
+    --input-border-color: var(--dark-500);
+    --input-border-color-selected: var(--dark-400);
+    --input-input-color: var(--dark-600);
+    --input-input-color-selected: var(--dark-500);
+    --input-option-color: var(--dark-400);
+    --input-option-color-selected: var(--dark-500);
+
+    --navbar-search-color: var(--dark-500);
+    --navbar-search-color-selected: var(--dark-400);
+    --navbar-search-icon-color: var(--filter-invert);
+
+    --footer-text-color: var(--light-400);
+    --footer-text-color-selected: var(--light-600);
+
+    --internal-content-box-background: var(--dark-700);
+    --internal-table-background-even: var(--dark-700);
+    --internal-table-background-odd: var(--dark-600);
+
+    --profile-badge-block: var(--dark-700);
+    --profile-badge-block-selected: var(--dark-600);
+}
+
+html[theme=dark] pre {
+    background-color: var(--dark-850);
+}
+
+html[theme=dark] code {
+    background-color: var(--dark-900);
+}
+
+html[theme=dark] .form-markdown img,
+html[theme=dark] .profile-post-action-icon ,
+html[theme=dark] #images-container img,
+html[theme=dark] .user-notification-icon,
+html[theme=dark] .internal-micro-stat img,
+html[theme=dark] .explore-stat-image,
+html[theme=dark] .settings-logged-device-icon,
+html[theme=dark] .settings-invites-stat-image,
+html[theme=dark] .badge-content-image,
+html[theme=dark] .badge-item-image {
+    filter: var(--filter-invert);
+}
+
+html[theme=dark] .settings-logged-device-icon {
+    background-color: transparent;
+}
+
+html[theme=dark] .profile-post-enabled .profile-post-action-icon {
+    filter: brightness(0) saturate(100%) invert(43%) sepia(46%) saturate(976%) hue-rotate(302deg) brightness(86%) contrast(88%);
+}
+
+html[theme=dark] .about-button a {
+    --default-text-color: var(--dark-700);
+}
+
+html[theme=dark] .profile-post-aside-button:hover,
+html[theme=dark] .profile-post-aside-button:focus-within {
+    filter: var(--filter-invert-400);
+}
+
+html[theme=dark] .profile-banner-aside-button img {
+    filter: var(--filter-invert-400);
+}
+
+html[theme=dark] .profile-post {
+    box-shadow: 0 2px 3px -1px #09090C;
+}

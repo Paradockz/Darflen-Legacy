@@ -1,0 +1,11 @@
+#content {
+    min-height: calc(100vh - 50px);
+}
+
+h1 {
+    margin: 1rem 0;
+}
+
+p {
+    line-height: 1.6;
+}

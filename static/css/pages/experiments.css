@@ -1,0 +1,122 @@
+:root {
+    --modal-background: #09090ca0;
+    --modal-foreground: var(--light-100);
+}
+
+html {
+    background-color: gray;
+}
+
+#content {
+    margin: 0;
+}
+
+.darflen-modal-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--modal-background);
+    animation-name: darflen-modal-fade;
+    animation-duration: 0.33s;
+    z-index: 99;
+}
+
+.darflen-modal-content {
+    position: relative;
+    width: 35rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: var(--modal-foreground);
+    box-shadow: var(--box-shadow-md);
+    animation-name: darflen-modal-open;
+    animation-duration: 0.33s;
+}
+
+.darflen-modal-content-section:not(:nth-last-child(1)) {
+    margin-bottom: 1rem;
+}
+
+.darflen-form-close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 1rem;
+    right: 1.15rem;
+    color: var(--form-small-text);
+    font-size: 28px;
+    font-weight: bold;
+    transition: var(--default-transition);
+    cursor: pointer;
+}
+
+.darflen-form-close:hover,
+.darflen-form-close:focus-within {
+    color: var(--default-text-color);
+}
+
+.darflen-modal-logo {
+    filter: var(--brand-filter);
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    width: 5rem;
+    height: 5rem;
+}
+
+.darflen-modal-title {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+    color: var(--default-text-color);
+}
+
+.darflen-modal-description {
+    color: var(--default-text-color) !important;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.darflen-modal-form {
+    width: 100%;
+}
+
+.darflen-modal-container .lb-input,
+.darflen-modal-container .lb-button,
+.darflen-modal-container .lb-checkbox {
+    margin-top: 0.66rem;
+    margin-bottom: 1rem;
+}
+
+.lb-label-checkbox .lb-checkbox {
+    margin: 0 0.66rem;
+}
+
+@keyframes darflen-modal-fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes darflen-modal-open {
+    from {
+        top: calc(50% - 25px);
+    }
+
+    to {
+       top: 50%;
+    }
+}

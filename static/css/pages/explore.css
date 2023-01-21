@@ -1,0 +1,238 @@
+h1,
+h2 {
+    margin: 1rem 0;
+}
+
+#posts-mode {
+    width: 100%;
+    text-align: center;
+}
+
+#posts-mode option {
+    background-color: var(--input-option-color);
+}
+
+.explore-section:not(:nth-child(1)) {
+    margin-top: 1rem;
+}
+
+.profile-user-post-buttons {
+    display: block;
+    margin-top: 1rem;
+}
+
+.profile-user-post-buttons-explore {
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+#explore-hashtags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.explore-hashtag {
+    background-color: var(--profile-box-color);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-sm);
+    flex-basis: 100%;
+}
+
+.explore-hashtag-title {
+    margin: 0;
+}
+
+.explore-hashtag-section:nth-child(1) {
+    margin-bottom: 1rem;
+}
+
+.explore-hashtag-button {
+    width: 100%;
+}
+
+#explore-contents {
+    display: flex;
+    flex-direction: column;
+}
+
+#explore-search {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    height: 3rem;
+    border: 1px solid var(--input-border-color);
+}
+
+#explore-paginator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#profile-posts-paginator {
+    width: 100%;
+    margin: 0;
+}
+
+#explore-additional-contents {
+    display: none;
+}
+
+@media screen and (min-width: 640px) {
+    .explore-hashtag {
+        flex-basis: calc(50% - 0.5rem);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #explore-search {
+        display: none;
+    }
+
+    .explore-section:not(:nth-child(1)) {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #posts-mode {
+        width: 15rem;
+        margin-bottom: 1rem;
+    }
+
+    .explore-not-complete-width {
+        margin-inline: auto;
+        width: 75%;
+    }
+
+    #explore-posts-container {
+        width: 75%;
+        margin: 2rem auto 0 auto;
+    }
+
+    #explore-posts-container-larger {
+        width: 100%;
+    }
+
+    #explore-contents {
+        flex-direction: row-reverse;
+    }
+    
+    #explore-posts {
+        width: 60%;
+        margin-right: 1rem;
+    }
+
+    .profile-user-post-buttons-explore {
+        width: calc(60% - 0.6rem);
+    }
+
+    #explore-additional-contents {
+        display: initial;
+        width: 40%;
+    }
+
+    .explore-additional-content {
+        background-color: var(--profile-box-color);
+        border-radius: 5px;
+        box-shadow: var(--box-shadow-sm);
+        padding: 1rem;
+    }
+
+    .explore-additional-content:not(:nth-child(1)) {
+        margin-top: 1rem;
+    }
+
+    .explore-additional-content-title {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .explore-additional-content-big-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .explore-additional-content-big-cards .profile-card-big {
+        width: 100%;
+    }
+
+    .explore-content-hashtag {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--profile-post-biscuit);
+        border-radius: 5px;
+        padding: 0.5rem;
+        transition: var(--default-transition);
+        margin-bottom: 0.5rem;
+    }
+
+    .explore-content-hashtag:hover,
+    .explore-content-hashtag:focus-within {
+        background-color: var(--profile-post-biscuit-selected);
+    }
+
+    .explore-content-hashtag-title {
+        display: block;
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .explore-content-hashtag-info {
+        font-size: 0.9rem;
+    }
+
+    .explore-stat-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .explore-stat-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .explore-stat-image {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .explore-stat-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .explore-stat-info {
+        display: block;
+        margin-top: 0.33rem;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .explore-hashtag {
+        flex-basis: calc(33% - 0.5rem);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .explore-hashtag {
+        flex-basis: calc(25% - 1rem);
+    }
+
+    .explore-additional-content-big-cards .profile-card-big {
+        width: calc(50% - 0.5rem);
+    }
+}
