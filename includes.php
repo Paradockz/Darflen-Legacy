@@ -27,9 +27,9 @@ if (!str_contains($_SERVER["DOCUMENT_ROOT"], "apps") && isset($_SERVER["HTTP_HOS
         if (CONFIG["website"]["maintenance"] == true && !in_array($_SERVER["REQUEST_URI"], ["/maintenance/","/internal/"])) {
             header("Location: " . ROOT_LINK . "/maintenance/");
         }
+        $database = prepare_database();
         if (isset($_COOKIE["token"]) && check_token_validity($_COOKIE["token"])) {
             $token = $_COOKIE["token"];
-            $database = prepare_database();
             $user = get_user_info_from_token($token);
             if ($database->preparedQuery("SELECT count(id) AS result FROM bans WHERE user = ?", [$user["identifier"]])->fetch(PDO::FETCH_ASSOC)["result"] > 0 && !in_array($_SERVER["REQUEST_URI"], ["/ban/", "/notifications/", "/terms/", "/privacy/", "/contact/", "/settings/"])) {
                 header("Location: ".ROOT_LINK."/ban/");
