@@ -43,7 +43,7 @@ function form(form) {
         }
 
         request.onload = function () {
-            if (updateForm(text, request, submit, window.location.link + '/', order) == 'ready') {
+            if (updateForm(text, request, submit, window.location.link + '/feed/', order) == 'ready') {
                 executing = false;
             }
             request.onerror = function () {
