@@ -6,7 +6,7 @@ $check = $database->preparedQuery('SELECT count(id) AS result, account FROM veri
 if ($check['result'] < 1) {
     header('Location: <?php echo ROOT_LINK ?>');
 }
-head('Password Recovery', 'en', 'authenticate.css',false, '', '', 'Darflen', false);
+head('Password Recovery', 'en', 'authenticate.css', false, '', '', WEBSITE, false);
 ?>
 
 <script src="<?php echo ROOT_LINK ?>/includes/js/authentication/forgot-password.js" async defer></script>
@@ -15,7 +15,7 @@ head('Password Recovery', 'en', 'authenticate.css',false, '', '', 'Darflen', fal
     <div id="page-form">
         <div id="form-container">
             <div class="form-section">
-                <img src="<?php echo STATIC_LINK ?>/img/logo.svg" alt="Darflen logo">
+                <img src="<?php echo STATIC_LINK ?>/img/logo.svg" alt="<?php echo WEBSITE ?> logo">
                 <h1>Reset password</h1>
             </div>
             <div class="form-section">

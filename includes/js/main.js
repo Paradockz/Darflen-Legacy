@@ -15,6 +15,7 @@ function links() {
                     case "success":
                         window.location.link = result.link;
                         window.location.flink = result.static;
+                        website = result.website;
                         break;
                     default:
                         createModal('A server error occured', result.error, 'Continue', false, () => { }, 'content');
@@ -60,7 +61,7 @@ function createModal(titleText = '', descriptionText = '', buttonText = '', imag
     container.insertAdjacentHTML('beforeend','<div class="lb-form-modal-container"><div class="lb-form-modal"><span class="form-close">&times;</span></div></div>');
     container = document.getElementsByClassName("lb-form-modal")[0];
     if(image) {
-        container.insertAdjacentHTML('beforeend', '<img class="lb-form-modal-icon" src="' + window.location.flink +'/img/logo.svg" alt="Darflen logo">');
+        container.insertAdjacentHTML('beforeend', '<img class="lb-form-modal-icon" src="' + window.location.flink +'/img/logo.svg" alt="'+website+' logo">');
     }
     if(titleText != '') {
         container.insertAdjacentHTML('beforeend','<h2>'+titleText+'</h2>');
@@ -147,7 +148,7 @@ function updateForm(text,request,submit,success,order,redirect = true,errorAt = 
 
 function formError(text, container = 'form-container') {
     container = document.getElementById(container);
-    container.insertAdjacentHTML('beforeend', '<div class="error-box-container"><img class="error-box-image" src="https://static.darflen.com/img/icons/interface/warning.svg" alt="Warning"><p class="error-box-text">' + text + '</p></div>');
+    container.insertAdjacentHTML('beforeend', '<div class="error-box-container"><img class="error-box-image" src="'+windows.flink+'/img/icons/interface/warning.svg" alt="Warning"><p class="error-box-text">' + text + '</p></div>');
 }
 
 function formErrorSystem(order, submit, errors, result) {

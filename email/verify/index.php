@@ -1,6 +1,6 @@
 <?php
 redirect_if_not_logged(ROOT_LINK);
-head('Verify email', 'en', 'authenticate.css',false, '', '', 'Darflen', false);
+head('Verify email', 'en', 'authenticate.css',false, '', '', WEBSITE, false);
 // In case someone's just copying the link.
 $yourself = json_decode(get_user_info_from_token($_COOKIE['token'])['data'], true);
 if ($yourself['miscellaneous']['email_verified'] && !$yourself['miscellaneous']['upcoming_email']) {
@@ -14,7 +14,7 @@ if ($yourself['miscellaneous']['email_verified'] && !$yourself['miscellaneous'][
     <div id="page-form">
         <div id="form-container">
             <div class="form-section">
-                <img src="https://static.darflen.com/img/logo.svg" alt="Darflen logo">
+                <img src="<?php echo ROOT_LINK ?>/img/logo.svg" alt="<?php echo WEBSITE ?> logo">
                 <h1>Enter your code</h1>
                 <p id="form-description">A verification code has been sent to your mailbox</p>
             </div>

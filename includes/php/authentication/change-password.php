@@ -66,7 +66,7 @@ try {
             $errors['code'] = 'success';
             // Send email
             $username = json_decode($yourself['data'],true)['username'];
-            $emailData = "Hello ".$username.". If you're reading this email. Your Darflen account password has been changed.";
+            $emailData = "Hello ".$username.". If you're reading this email. Your ".WEBSITE." account password has been changed.";
             $welcome = $username;
             include_once(DOCUMENT_ROOT . '\static\html\emails\change-password.php');
             send_mail(

@@ -1,6 +1,6 @@
 <?php
 redirect_if_not_logged(ROOT_LINK);
-head('Settings', 'en', 'settings.css', true, '', '', 'Darflen', false);
+head('Settings', 'en', 'settings.css', true, '', '', WEBSITE, false);
 $user = get_user_info_from_token($_COOKIE['token']);
 $data = json_decode($user['data'], true);
 $banned = !check_user_ban($user['identifier']);
@@ -162,7 +162,7 @@ $banned = !check_user_ban($user['identifier']);
         <div id="settings-devices">
             <div class="settings-devices-section">
                 <h3 class="settings-devices-title">Logged devices</h3>
-                <p class="settings-devices-description">Here are all the devices that are currently logged with your Darflen account. If you see an entry you don't recognize, log out of that device and immediately change your account password.</p>
+                <p class="settings-devices-description">Here are all the devices that are currently logged with your <?php echo WEBSITE ?> account. If you see an entry you don't recognize, log out of that device and immediately change your account password.</p>
             </div>
             <div class="settings-devices-section">
                 <ul id="settings-logged-devices">

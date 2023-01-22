@@ -28,7 +28,7 @@ $posts = recommend_user_posts('trending', 5, 0);
                         }
                         ?>
                     </h1>
-                    <p class="about-description">Darflen, your social media for sharing and connecting with your friends and people you know worldwide.</p>
+                    <p class="about-description"><?php echo WEBSITE ?>, your social media for sharing and connecting with your friends and people you know worldwide.</p>
                     <ul class="about-buttons">
                         <?php
                         if (!check_token_validity($token)) {

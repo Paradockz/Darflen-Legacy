@@ -7,7 +7,7 @@ if (isset($_COOKIE['token']) && check_token_validity($_COOKIE['token'])) {
 $yourself['id'] = isset($yourself['id']) ? $yourself['id'] : 0;
 $_SESSION['offset'] = 0;
 $_SESSION['mode'] = 'feed';
-head('Feed', 'en', 'explore.css',true, '', '', 'Darflen', false);
+head('Feed', 'en', 'explore.css',true, '', '', WEBSITE, false);
 $database = prepare_database();
 $posts = recommend_user_posts($_SESSION['mode'], 10, $_SESSION['offset'], $yourself['id']);
 ?>

@@ -1,4 +1,4 @@
-<?php head('Offline', 'en', 'errors.css', false, '', '', 'Darflen', false); ?>
+<?php head('Offline', 'en', 'errors.css', false, '', '', WEBSITE, false); ?>
 
 <div id="content">
     <div id="errors">

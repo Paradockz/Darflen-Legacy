@@ -18,7 +18,7 @@ foreach ($things as $key => $value) {
     $data[$key] = $database->rawQuery('SELECT COUNT(id) AS count FROM ' . $key)->fetch(PDO::FETCH_ASSOC)['count'];
 }
 $data['hashtags'] = count($database->rawQuery('SELECT count(hashtag) as result FROM hashtags  GROUP BY hashtag')->fetchAll(PDO::FETCH_ASSOC));
-$data['repost'] = $database->preparedQuery('SELECT count(id) as count FROM posts  WHERE JSON_EXISTS(data,"$.type") AND JSON_VALUE(data,"$.type.type") = ?',['repost'])->fetch(PDO::FETCH_ASSOC)['count'];
+$data['repost'] = $database->preparedQuery('SELECT count(id) as count FROM posts  WHERE JSON_EXISTS(data,"$.type") AND JSON_VALUE(data,"$.type.type") = ?', ['repost'])->fetch(PDO::FETCH_ASSOC)['count'];
 $paginator = 10;
 $paginator_count = ceil($data['posts'] / $paginator) + 1;
 if (isset($_GET['page'])) {
@@ -35,7 +35,7 @@ if (isset($_GET['page'])) {
     $paginator_page = 0;
 }
 $posts = $database->preparedQuery('SELECT id,author,text,meta,data FROM posts ORDER BY JSON_VALUE(data,"$.miscellaneous.creation_time") DESC LIMIT ?,?', [$paginator * $paginator_page, $paginator])->fetchAll(PDO::FETCH_ASSOC);
-head('Website Posts', 'en', 'internal.css', true, '', '', 'Darflen', false);
+head('Website Posts', 'en', 'internal.css', true, '', '', WEBSITE, false);
 ?>
 <script src="<?php echo ROOT_LINK ?>/includes/js/explore.js" async defer></script>
 <script src="<?php echo ROOT_LINK ?>/includes/js/posts.js" async defer></script>
@@ -45,7 +45,7 @@ head('Website Posts', 'en', 'internal.css', true, '', '', 'Darflen', false);
 
 <div id="content">
     <div id="internal">
-        <h1 id="internal-title">Darflen posts</h1>
+        <h1 id="internal-title"><?php echo WEBSITE ?> posts</h1>
         <div id="internal-contents">
             <div class="internal-section">
                 <ul class="internal-micro-stats">

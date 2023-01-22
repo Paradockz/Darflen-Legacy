@@ -1,6 +1,6 @@
 <?php
 redirect_if_logged(ROOT_LINK);
-head('Login', 'en', 'authenticate.css', false, 'Log into Darflen to start sharing and connecting with your friends and people you know worldwide.');
+head('Login', 'en', 'authenticate.css', false, 'Log into '.WEBSITE.' to start sharing and connecting with your friends and people you know worldwide.');
 ?>
 
 <script src="<?php echo ROOT_LINK ?>/includes/js/authentication/login.js" async defer></script>
@@ -9,7 +9,7 @@ head('Login', 'en', 'authenticate.css', false, 'Log into Darflen to start sharin
     <div id="page-form">
         <div id="form-container">
             <div class="form-section">
-                <img src="<?php echo STATIC_LINK ?>/img/logo.svg" alt="Darflen logo">
+                <img src="<?php echo STATIC_LINK ?>/img/logo.svg" alt="<?php echo WEBSITE ?> logo">
                 <h1>Login</h1>
             </div>
             <div class="form-section">

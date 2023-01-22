@@ -2,7 +2,7 @@
 redirect_if_not_logged(ROOT_LINK);
 session_start();
 $_SESSION['offset'] = 0;
-head('Notifications', 'en', 'notifications.css',true, '', '', 'Darflen', false);
+head('Notifications', 'en', 'notifications.css',true, '', '', WEBSITE, false);
 $database = prepare_database();
 $yourself = [];
 if (isset($_COOKIE['token']) && check_token_validity($_COOKIE['token'])) {

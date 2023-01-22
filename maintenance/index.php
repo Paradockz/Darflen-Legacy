@@ -1,5 +1,5 @@
 <?php
-head('', 'en', 'maintenance.css',true, '', '', 'Darflen', false);
+head('', 'en', 'maintenance.css',true, '', '', WEBSITE, false);
 ?>
 
 <div id="content">

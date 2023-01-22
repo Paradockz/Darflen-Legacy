@@ -119,6 +119,7 @@ try {
                         } else {
                             $jsonData = json_decode($post['data'],true);
                             $jsonData['images'] = $images_dir;
+                            $jsonData['miscellaneous']['edited'] = true;
                             if ($mode == 'reply') {
                                 $jsonData = json_encode($jsonData);
                                 $database->preparedQuery('UPDATE replies SET text = ?, data = ? WHERE id = ?',[$textarea,$jsonData,$post['id']]);

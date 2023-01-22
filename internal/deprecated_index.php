@@ -1,5 +1,5 @@
 <?php
-    redirect_if_not_logged('https://www.darflen.com');
+    redirect_if_not_logged(ROOT_LINK);
     $token = $_COOKIE['token'];
     $database = prepare_database();
     $user = get_user_info_from_token($token);
@@ -8,7 +8,7 @@
         include_once(DOCUMENT_ROOT . '/errors/404.php');
         exit;
     }
-    head('Admin', 'en', 'internal.css', true,'','','Darflen',false); 
+    head('Admin', 'en', 'internal.css', true,'','',WEBSITE,false); 
     $data = $database->preparedQuery('SELECT COUNT(id) AS count, id, JSON_VALUE(data,"$.ip") AS ip, JSON_VALUE(data,"$.agent") AS agent, JSON_VALUE(data,"$.miscellaneous.country") AS country, JSON_VALUE(data,"$.miscellaneous.creation_time") AS creation FROM access GROUP BY ip, agent ORDER BY count DESC',[])->fetchAll(PDO::FETCH_ASSOC);
 
     function load($item) {

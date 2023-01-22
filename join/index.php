@@ -1,6 +1,6 @@
 <?php
 redirect_if_logged(ROOT_LINK);
-head('Join', 'en', 'authenticate.css', false, 'Log into Darflen to start sharing and connecting with your friends and people you know worldwide.');
+head('Join', 'en', 'authenticate.css', false, 'Log into '.WEBSITE.' to start sharing and connecting with your friends and people you know worldwide.');
 ?>
 
 <script src="<?php echo ROOT_LINK ?>/includes/js/authentication/join.js" async defer></script>
@@ -9,7 +9,7 @@ head('Join', 'en', 'authenticate.css', false, 'Log into Darflen to start sharing
     <div id="page-form">
         <div id="form-container">
             <div class="form-section">
-                <img src="<?php echo STATIC_LINK ?>/img/logo.svg" alt="Darflen logo">
+                <img src="<?php echo STATIC_LINK ?>/img/logo.svg" alt="<?php echo WEBSITE ?> logo">
                 <h1>Create an account</h1>
             </div>
             <div class="form-section">
@@ -27,7 +27,7 @@ head('Join', 'en', 'authenticate.css', false, 'Log into Darflen to start sharing
             </div>
             <div class="form-section">
                 <a id="form-first-link" href="<?php echo ROOT_LINK ?>/login/">Already have an account?</a>
-                <p>By registering, you agree to Darflen <a href="<?php echo ROOT_LINK ?>/terms">Terms of Service</a> and <a href="<?php echo ROOT_LINK ?>/privacy">Privacy Policy</a></p>
+                <p>By registering, you agree to <?php echo WEBSITE ?> <a href="<?php echo ROOT_LINK ?>/terms">Terms of Service</a> and <a href="<?php echo ROOT_LINK ?>/privacy">Privacy Policy</a></p>
             </div>
         </div>
     </div>

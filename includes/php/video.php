@@ -88,9 +88,3 @@ class Video {
         $this->end();
     }
 }
-
-	
-if (isset($_GET['v']) && !empty($_GET['v'])) {
-    $stream = new Video('T:/darflen-portable/htdocs/static/uploads/'.$_GET['v']);
-    $stream->start();
-}
