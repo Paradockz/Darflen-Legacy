@@ -35,7 +35,7 @@ They can register an account by putting a unique email and a display name (usern
 
 There is also a password recovery system in case the users forget their password. The site generates temporary encrypted token links which when used by the user prompt to change the password.
 
-The site verifies the user prompts and checks for any errors such as ``empty fields``, ``invalid email``, ``badly formatted inputs``, ``server errors`` and much more.
+The site verifies the user prompts and checks for any errors such as ``Empty Fields``, ``Invalid Email``, ``Badly Formatted Inputs``, ``Server Errors`` and much more.
 
 ![Profile page](https://static.darflen.com/img/d.png)
 
@@ -52,7 +52,7 @@ The user can control their profile through the settings page by clicking the gea
 ![Profile page](https://static.darflen.com/img/c.png)
 
 ### Admin Panel
-Darflen has a simple but effective ``admin panel`` for administrators. Admins have access to the admin panel, where they can manage user information, edit website content, handle reports, and perform other moderation tasks. The admin panel also simplify access to each ``user``, ``posts``, ``comments`` and ``replies`` content for moderation purposes making easier for administrators to moderate the site.
+Darflen has a simple but effective ``admin panel`` for administrators. Admins have access to the admin panel, where they can manage user information, edit website content, handle reports, and perform other moderation tasks. The admin panel also simplify access to each ``Users``, ``Posts``, ``Comments`` and ``replies`` content for moderation purposes making easier for administrators to moderate the site.
 
 ![Profile page](https://static.darflen.com/img/e.png)
 
