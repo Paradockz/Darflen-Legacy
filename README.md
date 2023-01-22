@@ -1,14 +1,11 @@
-<p align="center">
-
-# Darflen
-
- Simple social media website
-
+<p align="center" style="margin-bottom: 0px !important;">
+  <img width="200" src="https://static.darflen.com/img/favicons/apple-touch-icon-precomposed.png" alt="Darflen logo" align="center">
 </p>
-
-
+<h1 align="center">Darflen</h1>
  
->  Darflen is a simplistic yet fully-featured social media website made with PHP where you can share things by posting in a community. 
+<p align="center" style="margin-bottom: 0px !important;">
+Darflen is a simplistic yet fully-featured social media website made with PHP where you can share things by posting in a community.
+</p>
 
 <!---
 ## Table of Contents
