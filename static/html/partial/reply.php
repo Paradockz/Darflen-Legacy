@@ -4,7 +4,7 @@
             <img class="profile-post-icon" src="<?php echo $user_icon ?>" alt="User icon" loading="lazy">
             <a href="<?php echo ROOT_LINK ?>/users/<?php echo $user_id ?>" class="profile-post-user">
                 <span class="profile-post-username"><?php echo $username ?></span>
-                <span class="profile-post-date"><?php echo $post_date ?></span>
+                <span class="profile-post-date"><?php echo $post_date ?> <?php echo $edited ? "(edited)" : "" ?></span>
             </a>
         </div>
         <div class="profile-post-top-section">

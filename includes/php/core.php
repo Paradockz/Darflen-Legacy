@@ -823,6 +823,7 @@ function build_post($post, $user, $yourself, $replies, $loved, $loves, $link = t
     $hearts = $loves;
     $reposts = $a4_reposts;
     $comments = $replies;
+    $edited = json_decode($post['data'], true)['miscellaneous']['edited'];
     $hits = json_decode($post['data'], true)['miscellaneous']['hits'];
     ob_start();
     include DOCUMENT_ROOT . '\static\html\partial\post.php';
@@ -885,6 +886,7 @@ function build_reply($post, $user, $yourself, $loved, $loves, $link = true, $sid
     $post_additional = $a2;
     $loved = $a3;
     $hearts = $loves;
+    $edited = json_decode($post['data'], true)['miscellaneous']['edited'];
     ob_start();
     include DOCUMENT_ROOT . '\static\html\partial\comment.php';
     $result = ob_get_contents();
@@ -947,6 +949,7 @@ function build_subreply($post, $user, $yourself, $loved, $loves, $link = true, $
     $loved = $a3;
     $hearts = $loves;
     $reply_id = $reply['id'];
+    $edited = json_decode($post['data'], true)['miscellaneous']['edited'];
     ob_start();
     include DOCUMENT_ROOT . '\static\html\partial\reply.php';
     $result = ob_get_contents();

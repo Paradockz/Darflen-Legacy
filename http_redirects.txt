@@ -1,0 +1,72 @@
+// Website rewrites.
+
+rewrite ^/users/(\w*)$ /users/index.php?u=$1;
+rewrite ^/users/(\w*)/followers$ /users/followers/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/following$ /users/following/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/hearts$ /users/hearts/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/posts$ /users/posts/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/achievements$ /users/achievements/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/$ /users/index.php?u=$1;
+rewrite ^/users/(\w*)/followers/$ /users/followers/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/following/$ /users/following/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/hearts/$ /users/hearts/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/posts/$ /users/posts/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/achievements/$ /users/achievements/index.php?u=$1&p=$2;
+rewrite ^/posts/(\w*)/edit$ /posts/edit/index.php?u=$1;
+rewrite ^/posts/(\w*)/edit/$ /posts/edit/index.php?u=$1;
+rewrite ^/posts/create/$ /posts/create/index.php;
+rewrite ^/posts/create$ /posts/create/index.php;
+rewrite ^/posts/(\w*)/report$ /posts/report/index.php?u=$1;
+rewrite ^/posts/(\w*)/report/$ /posts/report/index.php?u=$1;
+rewrite ^/posts/(\w*)$ /posts/index.php?u=$1;
+rewrite ^/posts/(\w*)/$ /posts/index.php?u=$1;
+rewrite ^/internal/posts/(\w*)/edit$ /internal/edit/index.php?u=$1;
+rewrite ^/internal/posts/(\w*)/edit/$ /internal/edit/index.php?u=$1;
+rewrite ^/internal/(\w*)/edit$ /internal/edit/index.php?u=$1;
+rewrite ^/internal/(\w*)/edit/$ /internal/edit/index.php?u=$1;
+rewrite ^/internal/users/(\w*)/edit$ /internal/users/edit/index.php?u=$1;
+rewrite ^/internal/users/(\w*)/edit/$ /internal/users/edit/index.php?u=$1;
+
+
+// API has is in the same root directory as the website.
+
+rewrite ^/api/users/(\w*)$ /api/users/index.php?u=$1;
+rewrite ^/api/users/(\w*)/followers$ /api/users/followers/index.php?u=$1&p=$2;
+rewrite ^/api/users/(\w*)/following$ /api/users/following/index.php?u=$1&p=$2;
+rewrite ^/api/users/(\w*)/hearts$ /api/users/hearts/index.php?u=$1&p=$2;
+rewrite ^/api/users/(\w*)/posts$ /api/users/posts/index.php?u=$1&p=$2;
+rewrite ^/api/users/(\w*)/achievements$ /api/users/achievements/index.php?u=$1&p=$2;
+rewrite ^/api/users/(\w*)/followers/(\w*)$ /api/users/followers/index.php?u=$1&p=$2;
+rewrite ^/api/users/(\w*)/following/(\w*)$ /api/users/following/index.php?u=$1&p=$2;
+rewrite ^/api/users/(\w*)/hearts/(\w*)$ /api/users/hearts/index.php?u=$1&p=$2;
+rewrite ^/api/users/(\w*)/posts/(\w*)$ /api/users/posts/index.php?u=$1&p=$2;
+rewrite ^/api/users/(\w*)/achievements/(\w*)$ /users/achievements/index.php?u=$1&p=$2;
+rewrite ^/api/posts/(\w*)$ /api/posts/index.php?u=$1;
+rewrite ^/api/posts/(\w*)/comments$ /api/posts/comments/index.php?u=$1;
+rewrite ^/api/posts/(\w*)/comments/(\w*)$ /api/posts/comments/index.php?u=$1&p=$2;
+rewrite ^/api/comments/(\w*)$ /api/comments/index.php?u=$1;
+rewrite ^/api/comments/(\w*)/replies$ /api/comments/replies/index.php?u=$1;
+rewrite ^/api/comments/(\w*)/replies/(\w*)$ /api/comments/replies/index.php?u=$1&p=$2;
+rewrite ^/api/replies/(\w*)$ /api/replies/index.php?u=$1;
+
+
+// API has it's own root directory.
+
+rewrite ^/users/(\w*)$ /users/index.php?u=$1;
+rewrite ^/users/(\w*)/followers$ /users/followers/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/following$ /users/following/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/hearts$ /users/hearts/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/posts$ /users/posts/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/achievements$ /users/achievements/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/followers/(\w*)$ /users/followers/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/following/(\w*)$ /users/following/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/hearts/(\w*)$ /users/hearts/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/posts/(\w*)$ /users/posts/index.php?u=$1&p=$2;
+rewrite ^/users/(\w*)/achievements/(\w*)$ /users/achievements/index.php?u=$1&p=$2;
+rewrite ^/posts/(\w*)$ /posts/index.php?u=$1;
+rewrite ^/posts/(\w*)/comments$ /posts/comments/index.php?u=$1;
+rewrite ^/posts/(\w*)/comments/(\w*)$ /posts/comments/index.php?u=$1&p=$2;
+rewrite ^/comments/(\w*)$ /comments/index.php?u=$1;
+rewrite ^/comments/(\w*)/replies$ /comments/replies/index.php?u=$1;
+rewrite ^/comments/(\w*)/replies/(\w*)$ /comments/replies/index.php?u=$1&p=$2;
+rewrite ^/replies/(\w*)$ /replies/index.php?u=$1;

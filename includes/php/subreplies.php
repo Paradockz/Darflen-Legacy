@@ -160,6 +160,7 @@ try {
                         } else {
                             $jsonData = json_decode($subreply['data'], true);
                             $jsonData['images'] = $images_dir;
+                            $jsonData['miscellaneous']['edited'] = true;
                             $jsonData = json_encode($jsonData);
                             $database->preparedQuery('UPDATE subreplies SET text = ?, data = ? WHERE id = ?', [$textarea, $jsonData, $subreply['id']]);
                             $errors['post'] = $database->preparedQuery('SELECT reply FROM subreplies WHERE id = ?', [$id])->fetch(PDO::FETCH_ASSOC)['reply'];
