@@ -1,6 +1,12 @@
+<p align="center">
+
 # Darflen
 
  Simple social media website
+
+</p>
+
+
  
 >  Darflen is a simplistic yet fully-featured social media website made with PHP where you can share things by posting in a community. 
 
