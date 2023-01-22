@@ -123,6 +123,8 @@ ffprobe = YOUR_FFMPEG_PROPE_DIRECTORY
 timeout = 36000
 threads = 20
 ```
+6. Prepend the ``includes.php`` with ``php.ini`` ``auto_prepend_file`` key. It is necessary for the correct scripts to load in each loaded pages. Only advanced users' are recommended to edit the constants in the file.
+
 > You need to do all the required steps to make it work. If the requirements are not met, the site will not work. Everything should work if the required steps are met.
 
 ### Post-installation Steps
