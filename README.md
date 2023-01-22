@@ -2,7 +2,7 @@
 
  Simple social media website
  
- Darflen is a simplistic yet fully-featured social media website made with PHP where you can share things by posting in a community. 
+>  Darflen is a simplistic yet fully-featured social media website made with PHP where you can share things by posting in a community. 
 
 <!---
 ## Table of Contents
