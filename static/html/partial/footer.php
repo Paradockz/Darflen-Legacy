@@ -20,7 +20,7 @@
             </ul>
         </div>
         <div class="footer-section">
-           <p id="footer-copyright"> © 2021-<?php echo date('Y'); ?> Darflen - All Rights Reserved.</p>
+            <p id="footer-copyright"> © 2021-<?php echo date('Y'); ?> <?php echo WEBSITE ?> - All Rights Reserved.</p>
         </div>
     </div>
 </div>

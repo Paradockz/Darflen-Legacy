@@ -48,7 +48,7 @@ $activity = $database->rawQuery('SELECT count(id) AS count FROM status')->fetch(
                     <div class="explore-additional-content">
                         <div class="explore-stat-content">
                             <div class="explore-stat-section">
-                                <img class="explore-stat-image" src="https://static.darflen.com/img/icons/interface/users.svg" alt="Users icon">
+                                <img class="explore-stat-image" src="<?php echo STATIC_LINK ?>/img/icons/interface/users.svg" alt="Users icon">
                             </div>
                             <div class="explore-stat-section">
                                 <span class="explore-stat-title"><?php echo $activity < 1 ? 1 : $activity ?></span>

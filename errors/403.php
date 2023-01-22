@@ -1,4 +1,4 @@
-<?php head('Forbidden! 403', 'en', 'errors.css',true, '', '', 'Darflen', false); ?>
+<?php head('Forbidden! 403', 'en', 'errors.css',true, '', '', WEBSITE, false); ?>
 
 <div id="content">
     <div id="errors">

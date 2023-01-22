@@ -25,14 +25,14 @@ if (isset($_GET['page'])) {
     $paginator_page = 0;
 }
 $bans = $database->preparedQuery('SELECT id,user,time,data FROM bans LIMIT ?,?', [$paginator * $paginator_page, $paginator])->fetchAll(PDO::FETCH_ASSOC);
-head('Website Bans', 'en', 'internal.css', true, '', '', 'Darflen', false);
+head('Website Bans', 'en', 'internal.css', true, '', '', WEBSITE, false);
 ?>
 
 <script src="<?php echo ROOT_LINK ?>/includes/js/internal.js" async defer></script>
 
 <div id="content">
     <div id="internal">
-        <h1 id="internal-title">Darflen bans</h1>
+        <h1 id="internal-title"><?php echo WEBSITE ?> bans</h1>
         <div id="internal-contents">
             <div class="internal-section">
                 <ul class="internal-micro-stats">

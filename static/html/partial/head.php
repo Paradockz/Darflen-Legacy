@@ -1,11 +1,11 @@
 <?php
 $pretitle = $title;
-$title = htmlspecialchars(empty($title) ? 'Darflen' : $title . ' | ' . 'Darflen', ENT_QUOTES);
-$description = !empty($description) ? htmlspecialchars($description, ENT_QUOTES) : htmlspecialchars('Darflen, your social media for sharing and connecting with your friends and people you know worldwide.', ENT_QUOTES);
+$title = htmlspecialchars(empty($title) ? WEBSITE : $title . ' | ' . WEBSITE, ENT_QUOTES);
+$description = !empty($description) ? htmlspecialchars($description, ENT_QUOTES) : htmlspecialchars(WEBSITE . ', your social media for sharing and connecting with your friends and people you know worldwide.', ENT_QUOTES);
 $icon = !empty($icon) ? $icon : STATIC_LINK . '/img/favicons/apple-touch-icon-180x180.png';
 $link = $_SERVER["REQUEST_URI"];
 $type = !empty($type) ? $type : 'summary';
-$author = isset($author) ? $author : 'Darflen';
+$author = isset($author) ? $author : WEBSITE;
 ?>
 
 
@@ -30,7 +30,7 @@ $author = isset($author) ? $author : 'Darflen';
 <head>
     <title><?php echo $title; ?></title>
     <meta name='description' content='<?php echo $description; ?>'>
-    <meta name='keywords' content='darflen, sharing, social, social media, posts, media'>
+    <meta name='keywords' content='<?php echo WEBSITE ?>, sharing, social, social media, posts, media'>
     <meta name='author' content='<?php echo $author; ?>'>
     <meta property='og:title' content='<?php echo $title; ?>'>
     <meta property='og:description' content='<?php echo $description; ?>'>
@@ -61,7 +61,6 @@ $author = isset($author) ? $author : 'Darflen';
             <meta name='twitter:video:height' content='1080'>
         <?php endif; ?>
     <?php endif; ?>
-    <meta name='twitter:site' content='@SociallyDarflen'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <?php
     if ($index) {

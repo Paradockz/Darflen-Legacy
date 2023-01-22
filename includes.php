@@ -17,6 +17,7 @@ define("API_LINK", $https . "api." . ltrim($_SERVER["HTTP_HOST"], $_SERVER["HTTP
 if (!str_contains($_SERVER["DOCUMENT_ROOT"], "apps") && isset($_SERVER["HTTP_HOST"]) && !empty($_SERVER["HTTP_HOST"])) {
     /* Prepare everything to make the page works */
     define("CONFIG", parse_ini_file(file_exists(DOCUMENT_ROOT . "\configs2.ini") ? DOCUMENT_ROOT."\configs2.ini" : DOCUMENT_ROOT . "\configs.ini", true));
+    define("WEBSITE", CONFIG["website"]["name"]);
     require_once DOCUMENT_ROOT . "/includes/php/core.php";
     log_request();
     if (!in_array($_SERVER["HTTP_SUBDOMAIN"], ["api", "experiments", "static"]) && $_SERVER["REQUEST_METHOD"] != "POST") {

@@ -1,4 +1,4 @@
-<?php head('Bad Request! 400', 'en', 'errors.css', true, '', '', 'Darflen', false); ?>
+<?php head('Bad Request! 400', 'en', 'errors.css', true, '', '', WEBSITE, false); ?>
 
 <div id="content">
     <div id="errors">

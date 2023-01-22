@@ -1,6 +1,6 @@
 <?php
 redirect_if_not_logged(ROOT_LINK);
-head('Change username', 'en', 'authenticate.css',false, '', '', 'Darflen', false);
+head('Change username', 'en', 'authenticate.css', false, '', '', WEBSITE, false);
 ?>
 
 <script src="<?php echo ROOT_LINK ?>/includes/js/authentication/change-username.js" async defer></script>
@@ -9,7 +9,7 @@ head('Change username', 'en', 'authenticate.css',false, '', '', 'Darflen', false
     <div id="page-form">
         <div id="form-container">
             <div class="form-section">
-                <img src="<?php echo STATIC_LINK ?>/img/logo.svg" alt="Darflen logo">
+                <img src="<?php echo STATIC_LINK ?>/img/logo.svg" alt="<?php echo WEBSITE ?> logo">
                 <h1>Enter a new username</h1>
                 <p id="form-description">Enter a new username and your existing password.</p>
             </div>

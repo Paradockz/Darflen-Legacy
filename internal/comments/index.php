@@ -33,7 +33,7 @@ if (isset($_GET['page'])) {
     $paginator_page = 0;
 }
 $posts = $database->preparedQuery('SELECT id,author,text,data FROM replies ORDER BY JSON_VALUE(data,"$.miscellaneous.creation_time") DESC LIMIT ?,?', [$paginator * $paginator_page, $paginator])->fetchAll(PDO::FETCH_ASSOC);
-head('Website Comments', 'en', 'internal.css', true, '', '', 'Darflen', false);
+head('Website Comments', 'en', 'internal.css', true, '', '', WEBSITE, false);
 ?>
 <script src="<?php echo ROOT_LINK ?>/includes/js/explore.js" async defer></script>
 <script src="<?php echo ROOT_LINK ?>/includes/js/posts.js" async defer></script>
@@ -43,7 +43,7 @@ head('Website Comments', 'en', 'internal.css', true, '', '', 'Darflen', false);
 
 <div id="content">
     <div id="internal">
-        <h1 id="internal-title">Darflen Comments</h1>
+        <h1 id="internal-title"><?php echo WEBSITE ?> Comments</h1>
         <div id="internal-contents">
             <div class="internal-section">
                 <ul class="internal-micro-stats">

@@ -30,12 +30,12 @@ if (isset($_GET['page'])) {
     $paginator_page = 0;
 }
 $reports = $database->preparedQuery('SELECT id,type,pid,reason,description,data FROM reports LIMIT ?,?', [$paginator * $paginator_page, $paginator])->fetchAll(PDO::FETCH_ASSOC);
-for ($index = 0; $index  <= 3; $index ++) { 
-   if(!isset($data['type'][$index]['count'])) {
+for ($index = 0; $index  <= 3; $index++) {
+    if (!isset($data['type'][$index]['count'])) {
         $data['type'][$index]['count'] = 0;
-   }
+    }
 }
-head('Website Reports', 'en', 'internal.css', true, '', '', 'Darflen', false);
+head('Website Reports', 'en', 'internal.css', true, '', '', WEBSITE, false);
 ?>
 
 <script src="<?php echo ROOT_LINK ?>/includes/js/explore.js" async defer></script>
@@ -43,7 +43,7 @@ head('Website Reports', 'en', 'internal.css', true, '', '', 'Darflen', false);
 
 <div id="content">
     <div id="internal">
-        <h1 id="internal-title">Darflen reports</h1>
+        <h1 id="internal-title"><?php echo WEBSITE ?> reports</h1>
         <div id="internal-contents">
             <div class="internal-section">
                 <ul class="internal-micro-stats">
@@ -178,15 +178,15 @@ head('Website Reports', 'en', 'internal.css', true, '', '', 'Darflen', false);
                             if ($pg > 1) : $p = $pg - 1 ?>
                                 <li class="profile-posts-paginator-page">
                                     <a href="<?php echo ROOT_LINK ?>/internal/reports/<?php echo '?page=' . $p ?>">
-                                        <</a>
+                                        << /a>
                                 </li>
                             <?php endif;
                             generate_paginator_3($pg, 1, $user, 'reports');
-                            generate_paginator_3($pg, 2,$user, 'reports');
-                            generate_paginator_3($pg, 3,$user, 'reports');
-                            generate_paginator_4($pg, $paginator_count - 3,$user, 'reports');
-                            generate_paginator_4($pg, $paginator_count - 2,$user, 'reports');
-                            generate_paginator_4($pg, $paginator_count - 1,$user, 'reports');
+                            generate_paginator_3($pg, 2, $user, 'reports');
+                            generate_paginator_3($pg, 3, $user, 'reports');
+                            generate_paginator_4($pg, $paginator_count - 3, $user, 'reports');
+                            generate_paginator_4($pg, $paginator_count - 2, $user, 'reports');
+                            generate_paginator_4($pg, $paginator_count - 1, $user, 'reports');
                             if ($pg + 1 < $paginator_count) : $p = $pg + 1 ?>
                                 <li class="profile-posts-paginator-page internal-paginator">
                                     <a href="<?php echo ROOT_LINK ?>/internal/reports/<?php echo '?page=' . $p ?>">></a>
@@ -202,4 +202,4 @@ head('Website Reports', 'en', 'internal.css', true, '', '', 'Darflen', false);
         </div>
     </div>
 </div>
-    <?php footer() ?>
+<?php footer() ?>

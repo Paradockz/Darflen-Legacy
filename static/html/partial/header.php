@@ -1,6 +1,6 @@
 <?php
 $token = isset($_COOKIE['token']) ? $_COOKIE['token'] : 0;
-if (check_token_validity($token) && $title != 'Chat | Darflen') {
+if (check_token_validity($token)) {
 ?>
     <ul id="bottom-links">
         <li class="bottom-link">
@@ -32,7 +32,7 @@ if (check_token_validity($token) && $title != 'Chat | Darflen') {
     <div id="nav-container">
         <div class="nav-section">
             <a id="nav-logo" href="<?php echo ROOT_LINK ?>">
-                <img src="<?php echo STATIC_LINK ?>/img/logo.svg" alt="Darflen logo">
+                <img src="<?php echo STATIC_LINK ?>/img/logo.svg" alt="<?php echo WEBSITE ?> logo">
             </a>
             <ul>
                 <li>
@@ -43,7 +43,7 @@ if (check_token_validity($token) && $title != 'Chat | Darflen') {
                 </li>
                 <li>
                     <a href="<?php echo ROOT_LINK ?>/explore" class="nav-button">
-                        <img src="<?php echo STATIC_LINK ?>/img/icons/interface/compass.svg" alt="Explore Darflen icon" title="Explore the website and discover new things">
+                        <img src="<?php echo STATIC_LINK ?>/img/icons/interface/compass.svg" alt="Explore <?php echo WEBSITE ?> icon" title="Explore the website and discover new things">
                         <span>Explore</span>
                     </a>
                 </li>
@@ -81,33 +81,33 @@ if (check_token_validity($token) && $title != 'Chat | Darflen') {
                         <a href="<?php echo ROOT_LINK ?>/settings" class="nav-account-button" title="User account settings">
                             <img src="<?php echo STATIC_LINK ?>/img/icons/interface/settings.svg" alt="User settings icon">
                             <!-- <span class="nav-account-bubble">!</span> -->
-        </a>
-        </li>
-        <li>
-            <a id="nav-profile" href="<?php echo ROOT_LINK ?>/users/<?php echo $user['identifier']; ?>">
-                <img id="nav-profile-icon" src="<?php echo json_decode($user['data'], true)['profile']['icon'] ?>" alt="User profile icon">
-                <span><?php echo json_decode($user['data'], true)['username'] ?></span>
-            </a>
-        </li>
-    </ul>
-<?php
+                        </a>
+                    </li>
+                    <li>
+                        <a id="nav-profile" href="<?php echo ROOT_LINK ?>/users/<?php echo $user['identifier']; ?>">
+                            <img id="nav-profile-icon" src="<?php echo json_decode($user['data'], true)['profile']['icon'] ?>" alt="User profile icon">
+                            <span><?php echo json_decode($user['data'], true)['username'] ?></span>
+                        </a>
+                    </li>
+                </ul>
+            <?php
             } else {
-?>
-    <ul id="nav-no-account">
-        <li>
-            <a href="<?php echo ROOT_LINK ?>/join/" class="nav-no-account-button">
-                <span>Join</span>
-            </a>
-        </li>
-        <li>
-            <a href="<?php echo ROOT_LINK ?>/login/" class="nav-no-account-button">
-                <span>Login</span>
-            </a>
-        </li>
-    </ul>
-<?php
+            ?>
+                <ul id="nav-no-account">
+                    <li>
+                        <a href="<?php echo ROOT_LINK ?>/join/" class="nav-no-account-button">
+                            <span>Join</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo ROOT_LINK ?>/login/" class="nav-no-account-button">
+                            <span>Login</span>
+                        </a>
+                    </li>
+                </ul>
+            <?php
             }
-?>
-</div>
-</div>
+            ?>
+        </div>
+    </div>
 </div>

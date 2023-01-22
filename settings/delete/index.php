@@ -1,6 +1,6 @@
 <?php
 redirect_if_not_logged(ROOT_LINK);
-head('Delete account', 'en', 'authenticate.css',false, '', '', 'Darflen', false);
+head('Delete account', 'en', 'authenticate.css', false, '', '', WEBSITE, false);
 // In case someone's just copying the link.
 $yourself = json_decode(get_user_info_from_token($_COOKIE['token'])['data'], true);
 if ($yourself['miscellaneous']['email_verified'] && !$yourself['miscellaneous']['upcoming_email']) {
@@ -14,7 +14,7 @@ if ($yourself['miscellaneous']['email_verified'] && !$yourself['miscellaneous'][
     <div id="page-form">
         <div id="form-container">
             <div class="form-section">
-                <img src="<?php echo STATIC_LINK ?>/img/logo.svg" alt="Darflen logo">
+                <img src="<?php echo STATIC_LINK ?>/img/logo.svg" alt="<?php echo WEBSITE ?> logo">
                 <h1>Account deletion</h1>
                 <p id="form-description">Please enter your password to continue the process.</p>
             </div>

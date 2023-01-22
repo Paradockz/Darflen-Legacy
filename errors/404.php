@@ -1,5 +1,5 @@
 <?php
-head('Whoops! 404', 'en', 'errors.css',true, '', '', 'Darflen', false);
+head('Whoops! 404', 'en', 'errors.css',true, '', '', WEBSITE, false);
 ?>
 
 <div id="content">

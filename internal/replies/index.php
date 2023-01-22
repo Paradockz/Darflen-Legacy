@@ -33,7 +33,7 @@ if (isset($_GET['page'])) {
     $paginator_page = 0;
 }
 $posts = $database->preparedQuery('SELECT id,author,text,data FROM subreplies ORDER BY JSON_VALUE(data,"$.miscellaneous.creation_time") DESC LIMIT ?,?', [$paginator * $paginator_page, $paginator])->fetchAll(PDO::FETCH_ASSOC);
-head('Website Replies', 'en', 'internal.css', true, '', '', 'Darflen', false);
+head('Website Replies', 'en', 'internal.css', true, '', '', WEBSITE, false);
 ?>
 <script src="<?php echo ROOT_LINK ?>/includes/js/explore.js" async defer></script>
 <script src="<?php echo ROOT_LINK ?>/includes/js/posts.js" async defer></script>
@@ -43,7 +43,7 @@ head('Website Replies', 'en', 'internal.css', true, '', '', 'Darflen', false);
 
 <div id="content">
     <div id="internal">
-        <h1 id="internal-title">Darflen replies</h1>
+        <h1 id="internal-title"><?php echo WEBSITE ?> replies</h1>
         <div id="internal-contents">
             <div class="internal-section">
                 <ul class="internal-micro-stats">
@@ -102,7 +102,7 @@ head('Website Replies', 'en', 'internal.css', true, '', '', 'Darflen', false);
                             if ($pg > 1) : $p = $pg - 1 ?>
                                 <li class="profile-posts-paginator-page">
                                     <a href="<?php echo ROOT_LINK ?>/internal/replies/<?php echo '?page=' . $p ?>">
-                                        <</a>
+                                        << /a>
                                 </li>
                             <?php endif;
                             generate_paginator_3($pg, 1, $user, 'replies');

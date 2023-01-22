@@ -18,7 +18,8 @@ try {
                 $errors = [
                     'code' => 'success',
                     'static' => STATIC_LINK,
-                    'link' => ROOT_LINK
+                    'link' => ROOT_LINK,
+                    'website' => WEBSITE
                 ];
                 break;
             default:

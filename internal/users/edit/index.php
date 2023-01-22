@@ -13,7 +13,7 @@ foreach ($things as $key => $value) {
     $data[$key] = $database->rawQuery('SELECT COUNT(id) AS count FROM ' . $key)->fetch(PDO::FETCH_ASSOC)['count'];
     $images[$key] = sprintf('%s.svg', $value);
 }
-head('Website Reports', 'en', 'settings.css', true, '', '', 'Darflen', false);
+head('Website Reports', 'en', 'settings.css', true, '', '', WEBSITE, false);
 $user = get_user_info_from_identifier($_GET['u']);
 $data = json_decode($user['data'], true);
 ?>

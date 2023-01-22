@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require_once DOCUMENT_ROOT . '\vendor\autoload.php';
 
-function head(string $title = '', string $lang = 'en_', string $css = '', bool $navbar = true, $description = '', $icon = '', $author = 'Darflen', bool $index = true, string $type = 'summary', string $ogtype = 'website') {
+function head(string $title = '', string $lang = 'en_', string $css = '', bool $navbar = true, $description = '', $icon = '', $author = WEBSITE, bool $index = true, string $type = 'summary', string $ogtype = 'website') {
     include_once DOCUMENT_ROOT . '\static\html\partial\head.php';
     if ($navbar) {
         navbar($title);
@@ -416,7 +416,7 @@ function send_mail(string $email, string $subject, string $html, string $text) {
     $mail->Password = CONFIG['email']['password'];
     $mail->SMTPSecure = CONFIG['email']['security'];
     $mail->Port = CONFIG['email']['port'];
-    $mail->setFrom(CONFIG['email']['username'], 'Darflen');
+    $mail->setFrom(CONFIG['email']['username'], WEBSITE);
     $mail->addAddress($email);
     $mail->isHTML(true);
     $mail->Subject = $subject;
@@ -576,95 +576,6 @@ function upload_post_file($file,$directory,$resize = false, $percentage = 80) {
             return 'type';
     }
     return get_file_type($file['type']);
-    /*
-    $directory_file = $directory . basename($file["name"]);
-    $file_type = strtolower(pathinfo($directory_file, PATHINFO_EXTENSION));
-    $file_name = sha1(openssl_random_pseudo_bytes(32));
-    $file['name'] = $file_name . '.' . $file_type;
-    $directory_file = $directory . basename($file["name"]);
-    $ffmpeg_params = [
-        'ffmpeg.binaries' => 'T:/darflen-portable/etc/ffmpeg/bin/ffmpeg.exe',
-        'ffprobe.binaries' => 'T:/darflen-portable/etc/ffmpeg/bin/ffprobe.exe',
-        'timeout' => 36000,
-        'ffmpeg.threads' => 12,
-        'temporary_directory' => $directory
-    ];
-    if ($file['error'] != 0) {
-        return 'upload';
-    }
-    
-    switch (get_file_type($file['type'])) {
-        case 'image':
-            if (move_uploaded_file($file['tmp_name'], $directory_file)) {
-                if ($file_type != 'gif') {
-                    if (!compress_image($directory_file, $directory_file, 40)) {
-                        return 'upload';
-                    }
-                }
-                if (!$resize) {
-                    return $directory_file;
-                }
-                if (resize_image($directory_file, $directory_file, $percentage)) {
-                    return $directory_file;
-                } else {
-                    return 'upload';
-                }
-            } else {
-                return 'upload';
-            }
-            break;
-        case 'video':
-            if (move_uploaded_file($file['tmp_name'], $directory_file)) {
-                try {
-                    $ffmpeg = FFMpeg\FFMpeg::create($ffmpeg_params);
-                    $ffprobe = FFMpeg\FFProbe::create($ffmpeg_params);
-                    $video = $ffmpeg->open($directory_file);
-                    $format = $ffprobe->format($directory_file);
-                    $bitrate = $format->get('bitrate');
-                    $bitrate = $bitrate > 3000 ? 3000 : $bitrate;
-                    $thumb = ceil($format->get('duration')/2)+1;              
-                    $thumb = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds($thumb));
-                    $thumb->save($directory . substr($file_name, 1) . 'vt.jpg');
-                    $format = new FFMpeg\Format\Video\X264();
-                    $format->setKiloBitrate($bitrate)->setAudioChannels(2)->setAudioKiloBitrate(128);
-                    $video->save($format, $directory . substr($file_name,1).'v.mp4');
-                    unlink($directory_file);
-                    $directory_file = $directory . substr($file_name, 1) . 'v.mp4';
-                    return $directory_file;
-                } catch (Throwable $e) {
-                    return $e->getMessage();
-                }
-            } else {
-                return 'upload';
-            }
-            break;
-        case 'audio':
-            if (move_uploaded_file($file['tmp_name'], $directory_file)) {
-                try {
-                    $ffmpeg = FFMpeg\FFMpeg::create($ffmpeg_params);
-                    $ffprobe = FFMpeg\FFProbe::create($ffmpeg_params);
-                    $audio = $ffmpeg->open($directory_file);
-                    $bitrate = $ffprobe->format($directory_file)->get('bitrate');
-                    $bitrate = $bitrate > 96 ? 96 : $bitrate;
-                    $format = new FFMpeg\Format\Audio\Mp3();
-                    $format->setAudioChannels(2)->setAudioKiloBitrate($bitrate);
-                    $audio->save($format, $directory . substr($file_name,1).'a.mp3');
-                    unlink($directory_file);
-                    $directory_file = $directory . substr($file_name, 1) . 'a.mp3';
-                    return $directory_file;
-                } catch (Throwable $e) {
-                    return $e->getMessage();
-                }
-            } else {
-                return 'upload';
-            }
-            break;
-        default:
-            return 'type';
-            break;
-    }
-    return get_file_type($file['type']);
-    */
 }
 
 /* Deprecated

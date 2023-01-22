@@ -13,7 +13,7 @@ foreach ($things as $key => $value) {
     $data[$key] = $database->rawQuery('SELECT COUNT(id) AS count FROM ' . $key)->fetch(PDO::FETCH_ASSOC)['count'];
     $images[$key] = sprintf('%s.svg', $value);
 }
-head('Ban', 'en', 'internal.css', true, '', '', 'Darflen', false);
+head('Ban', 'en', 'internal.css', true, '', '', WEBSITE, false);
 ?>
 
 <script src="<?php echo ROOT_LINK ?>/includes/js/internal.js" async defer></script>

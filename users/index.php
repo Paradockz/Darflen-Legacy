@@ -5,7 +5,7 @@ if (empty($_GET['u']) || !is_string($_GET['u']) || !$user = get_user_info_from_i
     exit;
 }
 $id = $user['id'];
-head(json_decode($user['data'], true)['username'] . '\'s Profile', 'en', 'profile.css', true, sprintf('%s is a Darflen user. Join Darflen to start sharing and connecting with %s or your friends and people you know worldwide.', json_decode($user['data'], true)['username'], json_decode($user['data'], true)['username']), json_decode($user['data'], true)['profile']['icon']);
+head(json_decode($user['data'], true)['username'] . '\'s Profile', 'en', 'profile.css', true, sprintf('%s is a '.WEBSITE.' user. Join '.WEBSITE.' to start sharing and connecting with %s or your friends and people you know worldwide.', json_decode($user['data'], true)['username'], json_decode($user['data'], true)['username']), json_decode($user['data'], true)['profile']['icon']);
 $database = prepare_database();
 $followers = $database->preparedQuery('SELECT count(id) AS fvalue FROM follows WHERE follower = ? UNION ALL SELECT count(id) AS fvalue FROM follows WHERE following = ?', [$id, $id])->fetchAll(PDO::FETCH_ASSOC);
 $yourself = [];
