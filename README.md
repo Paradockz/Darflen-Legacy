@@ -7,27 +7,25 @@
 Darflen is a simplistic yet fully-featured social media website made with PHP where you can share things by posting in a community.
 </p>
 
-<!---
 ## Table of Contents
-* [Features](#Features)
-* [Installation](#Installation)
-  * [Requirements](#Requirements)
-  * [Installation Steps](#Installation-Steps)
-  * [Post-installation Steps](#Post-Installation-Steps)
-* [Demo](#Accounts)
--->
+* [Features](#features)
+* [Installation](#installation)
+  * [Requirements](#requirements)
+  * [Installation Steps](#installation-steps)
+  * [Post-installation Steps](#post-installation-steps)
+* [Demo](#accounts)
+
 
 ## Features
 
-<!---
-* [Accounts](#Accounts)
-  * [Authentication](#Authentication)
-  * [Profiles](#Profiles)
-    * [Profile Page](#Profile-Page)
-    * [Settings Page](#Settings-Page)
- * [Admin Panel](#Admin-Panel)
- * [Explore Page](#Explore-Page)
- -->
+
+* [Accounts](#accounts)
+  * [Authentication](#authentication)
+  * [Profiles](#profiles)
+    * [Profile Page](#profile-page)
+    * [Settings Page](#settings-page)
+ * [Admin Panel](#admin-panel)
+ * [Explore Page](#explore-page)
 
 ### Accounts
 
@@ -123,6 +121,8 @@ ffprobe = YOUR_FFMPEG_PROPE_DIRECTORY
 timeout = 36000
 threads = 20
 ```
+6. Prepend the ``includes.php`` with ``php.ini`` ``auto_prepend_file`` key. It is necessary for the correct scripts to load in each loaded pages. Only advanced users' are recommended to edit the constants in the file. There are many other way you  can prepend this file. It is only an example.
+
 > You need to do all the required steps to make it work. If the requirements are not met, the site will not work. Everything should work if the required steps are met.
 
 ### Post-installation Steps
