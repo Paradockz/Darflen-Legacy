@@ -43,7 +43,7 @@ if (time() > $timeout['time'] + 60) {
     remove_timeout('posts_' . $id);
     $timeout['count'] = 0;
 }
-if ($yourself['id'] != $post['author'] && $timeout['count'] <= 1) {
+if ($yourself['id'] > 0 && $yourself['id'] != $post['author'] && $timeout['count'] <= 1) {
     $database->preparedQuery('UPDATE posts SET data = JSON_SET(data,"$.miscellaneous.hits",JSON_VALUE(data, "$.miscellaneous.hits")+1) WHERE id = ?', [$id]);
 }
 $loves = $database->preparedQuery('SELECT count(id) AS loves FROM loves WHERE type = ? AND pid = ?', ['post', $post['id']])->fetch(PDO::FETCH_ASSOC)['loves'];
