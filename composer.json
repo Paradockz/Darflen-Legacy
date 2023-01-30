@@ -1,6 +1,6 @@
 {
     "require": {
-        "phpmailer/phpmailer": "^6.6",
+        "phpmailer/phpmailer": "^6.7",
         "fakerphp/faker": "^1.19",
         "php-ffmpeg/php-ffmpeg": "^1.0",
         "spatie/async": "^1.5",
