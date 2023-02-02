@@ -105,6 +105,19 @@ try {
                             }
                             $database->preparedQuery('INSERT INTO posts (id,author,text,meta,data) VALUES (?,?,?,?,?)',[$id,$yourself['id'], $textarea, metaphone($textarea), $jsonData]);
                             if (!in_array($coverage,['unlisted','private'])) {
+                                $reposted_author = 0;
+                                if (!empty($reshare)) {
+                                    $reposted_post = get_post_info_from_id($reshare);
+                                    $reposted_author = get_user_info_from_id($reposted_post['author'])['id'];
+                                    make_notification($reposted_author, 1, json_encode([
+                                        'icon' => 'repeat.svg',
+                                        'html' => sprintf('<a href="%s/users/%s">%s</a> reposted your <a href="%s">post</a>.', ROOT_LINK,  $yourself['identifier'], json_decode($yourself['data'], true)['username'], ROOT_LINK . '/posts/' . $reposted_post['id']),
+                                        'miscellaneous' => [
+                                            'creation_time' => time(),
+                                            'read' => false
+                                        ]
+                                    ]));
+                                }
                                 foreach ($followers as $follower) {
                                     make_notification($follower['follower'], 1, json_encode([
                                         'icon' => 'message.svg',
