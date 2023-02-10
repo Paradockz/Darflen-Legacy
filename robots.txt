@@ -22,4 +22,3 @@ Disallow: /experiments/
 Disallow: /includes/
 
 Crawl-delay: 5
-Sitemap: https://static.darflen.com/sitemap.xml

@@ -13,7 +13,7 @@ Darflen is a simplistic yet fully-featured social media website made with PHP wh
   * [Requirements](#requirements)
   * [Installation Steps](#installation-steps)
   * [Post-installation Steps](#post-installation-steps)
-* [Demo](#accounts)
+* [Demo](#demo)
 
 
 ## Features
@@ -127,9 +127,9 @@ threads = 20
 
 ### Post-installation Steps
 
-It is not possible to signup as an administrator through the application, since we decided that it was an exploitable weakness. Therefore, you need to follow these steps to create an account with administration features.
+It is not possible to signup as an administrator through the application, since it was an exploitable weakness. Therefore, you need to follow these steps to create an account with administration features.
 1. Create an account the typical way you create an account on a social media website.
-2. Set the user ``administrator`` key from ``false`` to ``true`` in phpMyAdmin in the data column. It is required to have access to all the administrator features such as ``Banning``, ``Handling Reports`` and more.
+2. Set the user ``administrator`` key from ``false`` to ``true`` in phpMyAdmin in the desired user data column in the ``users`` table. It is required to have access to all the administrator features such as ``Banning``, ``Handling Reports`` and much more.
 ```json
 {
   "username": "YourName",
@@ -148,4 +148,5 @@ It is not possible to signup as an administrator through the application, since 
 ```
 
 ## Demo
+This is the entire website. Have a great time adventuring!
 https://darflen.com/explore/
