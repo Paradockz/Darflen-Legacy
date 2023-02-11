@@ -11,9 +11,6 @@ $https = $_SERVER["SERVER_PORT"] == 443 ? "https://" : "http://";
 
 /* If this breaks, everything else breaks and nothing would load! */
 if (!str_contains($_SERVER["DOCUMENT_ROOT"], "apps") && isset($_SERVER["HTTP_HOST"]) && !empty($_SERVER["HTTP_HOST"])) {
-    if (str_contains($_SERVER["HTTP_HOST"],"beta")) {
-        require_once rtrim($_SERVER["DOCUMENT_ROOT"], $_SERVER["HTTP_SUBDOMAIN"]) . "/beta" . "/includes.php";
-    } else {
         define("DOCUMENT_ROOT", rtrim($_SERVER["DOCUMENT_ROOT"], $_SERVER["HTTP_SUBDOMAIN"]));
         define("ROOT_LINK", $https . ltrim($_SERVER["HTTP_HOST"], $_SERVER["HTTP_SUBDOMAIN"] . '.'));
         define("STATIC_LINK", $https . "static." . ltrim($_SERVER["HTTP_HOST"], $_SERVER["HTTP_SUBDOMAIN"] . '.'));
@@ -49,5 +46,4 @@ if (!str_contains($_SERVER["DOCUMENT_ROOT"], "apps") && isset($_SERVER["HTTP_HOS
                 }
             }
         }
-    }
 }
