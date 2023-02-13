@@ -60,7 +60,7 @@ function form(form) {
     }
     
     request.onload = function () {
-        if (updateForm(text, request, submit, window.location.link + '/explore/', order)) {
+        if (updateForm(text, request, submit, window.location.link + '/', order)) {
             executing = false;
         }
         request.onerror = function () {

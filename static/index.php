@@ -1,0 +1,1 @@
+<?php echo 'Client side content server. '. ROOT_LINK ?>
