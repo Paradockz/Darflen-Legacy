@@ -666,7 +666,7 @@ function sub_edit(form, id) {
             request.open('POST', url, true);
             request.send(body);
         } catch (error) {
-            createModal('A client error occured', error, 'Go back', true, () => { }, 'page-form');
+            //createModal('A client error occured', error, 'Go back', true, () => { }, 'page-form');
             submit.innerText = oldText;
         }
     } else {
@@ -695,12 +695,12 @@ function sub_edit(form, id) {
                         window.location.replace(window.location.link + '/posts/' + result.post);
                         break;
                     default:
-                        createModal('A server error occured', result.error, 'Go back', true, () => { }, 'page-form');
+                        //createModal('A server error occured', result.error, 'Go back', true, () => { }, 'page-form');
                         executing = false;
                         break;
                 }
             } catch (error) {
-                createModal('A client error occured', error, 'Go back', true, () => { }, 'page-form');
+                //createModal('A client error occured', error, 'Go back', true, () => { }, 'page-form');
                 submit.innerText = oldText;
                 executing = false;
             }
@@ -709,14 +709,14 @@ function sub_edit(form, id) {
             submit.innerText = oldText;
             executing = false;
         } else {
-            createModal('A client error occured', 'Request failed: Server replied with code ' + this.status, 'Go back', true, () => { }, 'page-form');
+            //createModal('A client error occured', 'Request failed: Server replied with code ' + this.status, 'Go back', true, () => { }, 'page-form');
             executing = false;
         }
         submit.innerText = oldText;
     }
 
     request.onerror = function () {
-        createModal('A client error occured', 'Request failed', 'Go back', true, () => { }, 'page-form');
+        //createModal('A client error occured', 'Request failed', 'Go back', true, () => { }, 'page-form');
         submit.innerText = oldText;
         executing = false;
     }
