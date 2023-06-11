@@ -17,8 +17,8 @@ class DB {
     private function connect() {
         $this->connect = new PDO(
             'mysql:host=' . DB::$credentials['host'] .
-            ';dbname=' . DB::$credentials['database'] .
-            ';port=' . DB::$credentials['port'],
+                ';dbname=' . DB::$credentials['database'] .
+                ';port=' . DB::$credentials['port'],
             DB::$credentials['username'],
             DB::$credentials['password']
         );
@@ -202,7 +202,7 @@ class Upload {
                     $height = round($height * ($percentage / 100));
                 }
                 $format = new FFMpeg\Format\Video\X264();
-                $video->filters()->resize(new FFMpeg\Coordinate\Dimension($width,$height), FFMpeg\Filters\Video\ResizeFilter::RESIZEMODE_INSET);
+                $video->filters()->resize(new FFMpeg\Coordinate\Dimension($width, $height), FFMpeg\Filters\Video\ResizeFilter::RESIZEMODE_INSET);
                 $video->save($format, self::$directory . substr(self::$file["name"], 1) . "v.mp4");
                 unlink(self::$file["directory"]);
                 self::$file["directory"] = self::$directory . substr(self::$file["name"], 1) . "v.mp4";

@@ -148,7 +148,7 @@ function updateForm(text,request,submit,success,order,redirect = true,errorAt = 
 
 function formError(text, container = 'form-container') {
     container = document.getElementById(container);
-    container.insertAdjacentHTML('beforeend', '<div class="error-box-container"><img class="error-box-image" src="'+windows.flink+'/img/icons/interface/warning.svg" alt="Warning"><p class="error-box-text">' + text + '</p></div>');
+    container.insertAdjacentHTML('beforeend', '<div class="error-box-container"><img class="error-box-image" src="'+window.location.flink+'/img/icons/interface/warning.svg" alt="Warning"><p class="error-box-text">' + text + '</p></div>');
 }
 
 function formErrorSystem(order, submit, errors, result) {

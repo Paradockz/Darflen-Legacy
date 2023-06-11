@@ -289,7 +289,7 @@ function parse_post_text($text) {
         '/(\`\`\`)([^<]+?)\1/m' => function($regex) {
             return '<pre>'.trim($regex[2], "\x00..\x1F").'</pre>';
         },
-        '/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/' => '<object><a href="\0">\0</a></object>',
+        '/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,6}(\/\S*)?/' => '<object><a href="\0">\0</a></object>',
         '/(\*\*)(.*?)\1/' => '<strong>\2</strong>',
         '/(\`\`)(.*?)\1/' => '<code>\2</code>',
         '/(\|\|)(.*?)\1/' => '<span class="text-spoiler" tabindex="0">\2</span>',
@@ -616,11 +616,11 @@ function upload_mass_files($images, $upload_statement) {
             foreach ($images as $image) {
                 $total_size += $image['size'];
             }
-            if ($total_size > 50000000) {
+            if ($total_size > 99000000) {
                 $error = 'tSize';
             } else {
                 foreach ($images as $image) {
-                    if ($image['size'] > 8000000) {
+                    if ($image['size'] > 99000000) {
                         $error = 'eSize';
                     }
                 }
@@ -747,7 +747,7 @@ function recommend_hashtags(string $type = 'hashtags', int $limit = PHP_INT_MAX,
 }
 
 // Should used a html file include but no.
-function build_post($post, $user, $yourself, $replies, $loved, $loves, $link = true, $side = true, $vidcontrols = false) {
+function build_post($post, $user, $yourself, $replies, $loved, $loves, $link = true, $side = true, $vidcontrols = false, $yes = 0) {
     $a1 = '';
     if ($side) {
         if ($post['author'] == $yourself['id']) {
@@ -805,7 +805,11 @@ function build_post($post, $user, $yourself, $replies, $loved, $loves, $link = t
             $a4_loves = $database->preparedQuery('SELECT count(id) AS loves FROM loves WHERE type = ? AND pid = ?', ['post', $a4['id']])->fetch(PDO::FETCH_ASSOC)['loves'];
             $a4_loved = $database->preparedQuery('SELECT count(id) AS loved FROM loves WHERE type = ? AND pid = ? AND user = ?', ['post', $a4['id'], $yourself['id']])->fetch(PDO::FETCH_ASSOC)['loved'] > 0;
             $a4_replies = count(get_user_post_replies($a4_id));
-            $a4 = build_post($a4, $a4_user, $yourself, $a4_replies, $a4_loved, $a4_loves);
+            if ($yes < 3) {
+                $a4 = build_post($a4, $a4_user, $yourself, $a4_replies, $a4_loved, $a4_loves, true, true, false, $yes + 1);
+            } else {
+                $a4 = "<strong>There are most reposts in this reposts chain.</strong>";
+            }
         }
     }
 

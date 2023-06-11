@@ -1,5 +1,5 @@
 <?php
-head('Badges', 'en', 'badges.css', true);
+head('Achievements', 'en', 'badges.css', true);
 $badges = $database->preparedQuery("SELECT badge, count(id) AS result FROM badges GROUP BY badge", [])->fetchAll(\PDO::FETCH_GROUP | \PDO::FETCH_UNIQUE);
 
 $items = [

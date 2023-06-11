@@ -80,7 +80,7 @@ head('Website Reports', 'en', 'internal.css', true, '', '', WEBSITE, false);
                     </tr>
                     <?php
                     foreach ($reports as $report) {
-                        $report_data = json_decode($report['data'], true);
+                        if($report_data = json_decode($report['data'], true)):
                     ?>
                         <tr class="internal-table-section">
                             <td class="internal-table-item internal-table-thin-cell">
@@ -165,6 +165,7 @@ head('Website Reports', 'en', 'internal.css', true, '', '', WEBSITE, false);
                             </td>
                         </tr>
                     <?php
+                    endif;
                     }
                     ?>
                 </table>

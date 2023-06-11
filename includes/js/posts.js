@@ -21,7 +21,7 @@ let text = {
     "images-container": {
         "name": "Files",
         "upload": "Upload failed",
-        "tSize": "Files sizes must be 50MB or lower",
+        "tSize": "Files sizes must be 100MB or lower",
         "eSize": "File size must be 8MB or lower",
         "length": "Must have less than 10 files",
         "type": "Not supported file type"
