@@ -616,11 +616,11 @@ function upload_mass_files($images, $upload_statement) {
             foreach ($images as $image) {
                 $total_size += $image['size'];
             }
-            if ($total_size > 50000000) {
+            if ($total_size > 99000000) {
                 $error = 'tSize';
             } else {
                 foreach ($images as $image) {
-                    if ($image['size'] > 8000000) {
+                    if ($image['size'] > 99000000) {
                         $error = 'eSize';
                     }
                 }

@@ -41,8 +41,8 @@ try {
             } else {
                 $posts = [];
             }
-            
-            
+
+
             // DO NOT TOUCH ANYTHING BELOW, IT WOULD WORK FINE.
             if ($posts) {
                 $result = '';

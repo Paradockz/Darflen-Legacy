@@ -5,6 +5,8 @@ configs2.ini
 magic3.js
 /experiments/
 /experiments/*
+/experimentsabc/
+/experimentsabc/*
 /static/sitemap.xml
 /beta/
 /beta/*
